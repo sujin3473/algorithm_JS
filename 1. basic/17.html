@@ -12,7 +12,14 @@
       }, []);
       return result;
     }
-    console.log(Solution(['good','time','good','time','student']));
+
+    function Solution2(x) {
+      let arr = Array.from(x);
+      const result = new Set(arr);
+      return result;
+    }
+
+    console.log(Solution2(['good','time','good','time','student']));
   </script>
 </body>
 </html>
