@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>대문자로 통일</title>
+</head>
+<body>
+  <script>
+    function Solution(x) {
+      let arr = x.split('');
+      for(i=0;i<arr.length;i++) {
+        let upper = arr[i].toUpperCase();
+        if(arr[i] !== upper) arr.splice(i,1,upper);
+      }
+      return arr.join('');
+    }
+    console.log(Solution("ItisTimeToStudy"));
+  </script>
+</body>
+</html>

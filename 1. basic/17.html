@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>중복단어제거</title>
+</head>
+<body>
+  <script>
+    function Solution(x) {
+      let arr = Array.from(x);
+      const result = arr.reduce((unique, item) => {
+        return unique.includes(item) ? unique : [...unique, item];
+      }, []);
+      return result;
+    }
+    console.log(Solution(['good','time','good','time','student']));
+  </script>
+</body>
+</html>

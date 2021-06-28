@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>대소문자 변환</title>
+</head>
+<body>
+  <script>
+    function Solution(x) {
+      let arr = x.split('');
+      for(i=0;i<arr.length;i++) {
+        let upper = arr[i].toUpperCase();
+        let lower = arr[i].toLowerCase();
+        if(arr[i] !== upper) arr.splice(i,1,upper);
+        else arr.splice(i,1,lower);
+      }
+      return arr.join('');
+    }
+    console.log(Solution("StuDY"));
+  </script>
+</body>
+</html>

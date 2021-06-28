@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>A를 #로</title>
+</head>
+<body>
+  <script>
+    function Solution(abc) {
+      const arr = abc.split('');
+      const result = [];
+      for (i=0; i<arr.length; i++) {
+        if(arr[i]==="A") result.push("#");
+        else result.push(arr[i]);
+      }
+      return result.join('');
+    }
+    console.log(Solution('BANANA'));
+  </script>
+</body>
+</html>

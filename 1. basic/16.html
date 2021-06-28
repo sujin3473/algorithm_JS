@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>중복문자제거</title>
+</head>
+<body>
+  <script>
+    function Solution(x) {
+      const arr = x.split('');
+      const result = new Set(arr);
+      return [...result].join('');
+    }
+
+    function Solution2(x) {
+      const arr = Array.from(x);
+      const result = arr.reduce((unique, item)=> {
+        return unique.includes(item) ? unique : [...unique, item]
+      }, []);
+      return result.join('');
+    }
+
+    console.log(Solution2('ksekkset'));
+
+  </script>
+</body>
+</html>

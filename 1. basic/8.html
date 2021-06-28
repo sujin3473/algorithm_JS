@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>일곱 난쟁이</title>
+</head>
+<body>
+  <script>
+    function Solution(a,b,c,d,e,f,g,h,i) {
+      let arr = [a,b,c,d,e,f,g,h,i];
+      num = arr.reduce((sum, a) => sum + a) - 100;
+      for(i=0;i<8;i++) {
+        if(arr[i]<num) {
+          for(j=i+1;j<9;j++) {
+            let sum = arr[i] + arr[j];
+            if(sum === num) {
+              return arr.filter(
+                (value, index) => index !== i && index !== j
+              );
+            }
+          }
+        }
+      }
+    }
+    console.log(Solution(20,7,23,19,10,15,25,8,13));
+</script>
+</body>
+</html>

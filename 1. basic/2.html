@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>삼각형 판별하기</title>
+</head>
+<body>
+  <script>
+    function Solution(x, y, z) {
+      let max;
+      if(x<y) max = y;
+      else max = x;
+      if(max<z) max = z;
+      const sum = x + y + z;
+      return ((sum-max) > max) ? "YES" : "NO";
+    }
+    console.log(Solution(6,7,11));
+  </script>
+</body>
+</html>

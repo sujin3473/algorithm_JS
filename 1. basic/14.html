@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>가장 긴 문자열</title>
+</head>
+<body>
+  <script>
+    function Solution(x) {
+      let result;
+      for (i=0;i<x.length-1;i++) {
+        if(x[i].length > x[i+1].length) result = x[i];
+        else result = x[i+1];
+      }
+      return result;
+    }
+    console.log(Solution(["teacher", "time", "student", "beautiful", "good"]));
+  </script>
+</body>
+</html>

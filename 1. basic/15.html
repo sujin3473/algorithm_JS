@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>가운데 문자 출력</title>
+</head>
+<body>
+  <script>
+    function Solution(x) {
+      const idx = Math.floor(x.length/2);
+      if(x.length%2!==0) return x[idx];
+      else return x[idx-1].concat(x[idx]);
+    }
+    console.log(Solution('study'));
+    console.log(Solution('good'));
+  </script>
+</body>
+</html>
