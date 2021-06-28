@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>삼각형 판별하기</title>
+</head>
+<body>
+  <script>
+    function solution(x, y, z) {
+      let answer="YES", max;
+      const sum = x + y + z;
+      if(x<y) max = y;
+      else max = x;
+      if(max<z) max = z;
+      if((sum-max)<=max) answer = "NO";
+      return answer;
+    }
+    console.log(solution(4,7,11));
+  </script>
+</body>
+</html>
