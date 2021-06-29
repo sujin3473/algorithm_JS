@@ -6,23 +6,23 @@
 <body>
   <script>
     function solution(arr) {
-      let answer = 0, sum1 = 0, sum2 = 0;
-      arr.forEach((arr, index) =>
-        arr
-      );
+      let answer = 0;
+      for(let i = 0; i < arr.length; i++) {
+        let sum1 = sum2 = 0;
+        for(let j = 0; j < arr.length; j++) {
+          sum1 += arr[i][j];
+          sum2 += arr[j][i];
+        }
+        answer = Math.max(answer, sum1, sum2);
+      }
+      let sum1 = sum2 = 0;
+      for(let i = 0; i<arr.length; i++) {
+        sum1 += arr[i][i];
+        sum2 += arr[i][arr.length-i-1];
+      }
+      answer = Math.max(answer, sum1, sum2);
       return answer;
     }
-
-    // 00 01 02 03 04
-    // 10 11 12 13 14
-    // ...
-
-    // 00 10 20 30 40
-    // 01 11 21 31 41
-    // ...
-
-    // 00 11 22 33 44
-    // 04 13 22 31 40
 
     let arr = [
       [10, 13, 10, 12, 15],
