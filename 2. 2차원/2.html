@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>보이는 학생</title>
+</head>
+<body>
+  <script>
+    function Solution(n, arr) {
+      let answer = 0, cur = 0;
+      for(let x of arr) {
+        if(x>cur) {
+          answer++;
+          cur=x;
+        }
+      }
+      return answer;
+    }
+
+    const arr = [130, 135, 148, 140, 145, 150, 150, 153];
+    console.log(Solution(arr.length, arr));
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>등수구하기</title>
+</head>
+<body>
+  <script>
+    function solution(arr) {
+      let answer = [];
+      for(x in arr) {
+        let rank = 1;
+        for(y in arr) {
+          if(x===y) continue;
+          else if(arr[x]<arr[y]) rank++;
+        }
+        answer.push(rank);
+      }
+      return answer;
+    }
+
+    const arr = [87, 89, 92, 100, 76];
+    console.log(solution(arr));
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>격자판 최대합</title>
+</head>
+<body>
+  <script>
+    function solution(arr) {
+      let answer = 0, sum1 = 0, sum2 = 0;
+      arr.forEach((arr, index) =>
+        arr
+      );
+      return answer;
+    }
+
+    // 00 01 02 03 04
+    // 10 11 12 13 14
+    // ...
+
+    // 00 10 20 30 40
+    // 01 11 21 31 41
+    // ...
+
+    // 00 11 22 33 44
+    // 04 13 22 31 40
+
+    let arr = [
+      [10, 13, 10, 12, 15],
+      [12, 39, 30, 23, 11],
+      [11, 25, 50, 53, 15],
+      [19, 27, 29, 37, 27],
+      [19, 13, 30, 13, 19]
+    ];
+    console.log(solution(arr));
+  </script>
+</body>
+</html>

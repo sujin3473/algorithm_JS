@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>점수계산</title>
+</head>
+<body>
+  <script>
+    function solution(arr) {
+      let answer = 0,n = 0;
+      for(x of arr) {
+        if(x=== 1) {
+          ++n;
+          answer+=n;
+        }
+        else n = 0;
+      }
+      return answer;
+    }
+
+    const arr = [1,0,1,1,1,0,0,1,1,0];
+    console.log(solution(arr));
+  </script>
+</body>
+</html>

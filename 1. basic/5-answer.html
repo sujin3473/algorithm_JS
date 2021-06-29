@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>최솟값 구하기</title>
+</head>
+<body>
+  <script>
+    function Solution(arr) {
+      let min=Number.MAX_SAFE_INTEGER;
+      //Number.MAX_SAFE_INTEGER -> for문 첫번째 loop에서 무조건 arr[0]<min이 참이 되도록 하기 위해
+      for(let i=0; i<arr.length; i++) {
+        if(arr[i]<min) min=arr[i];
+      }
+      return min;
+    }
+
+    //JS 내장함수 사용
+    function Solution2(arr) {
+      let answer = Math.min(...arr); //spread operator
+      return answer;
+    }
+    let arr = [5, 7, 1, 3, 2, 9, 11];
+    console.log(Solution2(arr));
+  </script>
+</body>
+</html>
