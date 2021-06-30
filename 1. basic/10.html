@@ -12,6 +12,12 @@
       }
       return result;
     }
+
+    function Solution2(s, t) {
+      //찾는 문자가 맨 끝에 있는 경우 마지막 요소가 공백값으로 저장된다.
+      return s.split(t).length-1;
+    }
+
     console.log(Solution("COMPUTERPROGRAMMING","R"));
   </script>
 </body>
