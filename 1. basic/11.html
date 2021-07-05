@@ -7,8 +7,10 @@
   <script>
     function Solution(x) {
       let result = 0;
-      for(i=0;i<x.length;i++) {
-        if(x[i]===x[i].toUpperCase()) result++;
+      for(let y of x) {
+        if(y===y.toUpperCase()) result++;
+        //let num = x.charCodeAt();
+        //if(num>=65 && num<=90) answer++; 아스키 넘버로 하는 법
       }
       return result;
     }

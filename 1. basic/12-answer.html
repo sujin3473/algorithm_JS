@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>대문자로 통일</title>
+</head>
+<body>
+  <script>
+    function Solution(x) {
+      let answer = "";
+      for(let x of s) {
+        if(x===x.toLowerCase()) answer+=x.toUpperCase();
+        else answer+=x;
+        //아스키 코드 사용하기
+        //let num = x.charCodeAt();
+        //if(num>=97 && num<=122) answer+=String.fromCharCode(num-32);
+        //else answer+=x;
+      }
+      return answer;
+    }
+    console.log(Solution("ItisTimeToStudy"));
+  </script>
+</body>
+</html>
