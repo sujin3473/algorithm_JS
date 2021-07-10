@@ -5,7 +5,7 @@
 </head>
 <body>
   <script>
-    function Solution(n, arr) {
+    function Solution(arr) {
       let answer = 0, cur = 0;
       for(let x of arr) {
         if(x>cur) {
@@ -17,7 +17,7 @@
     }
 
     const arr = [130, 135, 148, 140, 145, 150, 150, 153];
-    console.log(Solution(arr.length, arr));
+    console.log(Solution(arr));
   </script>
 </body>
 </html>

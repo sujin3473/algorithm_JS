@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>중복단어제거</title>
+</head>
+<body>
+  <script>
+    function solution(s) {
+      let answer;
+      answer = s.filter(function(v, i) {
+        return s.indexOf(v) === i;
+        // indexOf를 잘 활용하자✨
+      });
+      return answer;
+    }
+
+    console.log(solution(['good','time','good','time','student']));
+  </script>
+</body>
+</html>

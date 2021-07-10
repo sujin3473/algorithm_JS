@@ -8,11 +8,14 @@
     function solution(s) {
       //indexOf(x) - 인자가 첫번째로 발견되는 index 리턴
       //indexOf(x, num) - num인덱스부터 x를 찾아서 첫번째로 발견되는 index 리턴
-      
       let answer = "";
       for(let i in s) {
-        // console.log(s[i], i, s.indexOf(s[i]));
-        if(s.indexOf(s[i]) === i) answer+=s[i];
+        if(s.indexOf(s[i]) == i) answer+=s[i];
+        //for in문을 사용할 때는 비교할 때 2항연산자를 사용해야한다.
+        // === : type과 value를 모두 비교
+        // == : value만 비교
+        // **for in 문은 순서가 중요한 array를 반복할 때 사용하지 않는다.
+        //   index 순서대로 반복하지 않을 수 있기때문.
       }
       return answer;
     }
