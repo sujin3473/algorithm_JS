@@ -8,13 +8,22 @@
     function solution(arr) {
       let answer = 0;
       const n = arr.length;
-      const dx = [-1, 0, 1, ];
-      const dy = [0, 1, ];
+      const dx = [-1, 0, 1, 0];
+      const dy = [0, -1, 0, 1];
       for(let i=0; i<n; i++) {
         for(let j=0; j<n; j++) {
-          arr[i][j]
+          let max = arr[i][j];
+          for(let k=0; k<4; k++) {
+            let x = i+dx[k];
+            let y = j+dy[k];
+            if(x>=0&&y>=0&&x<n&&y<n) {
+              if(arr[i][j]<arr[x][y]) max=arr[x][y];
+            }
+          }
+          if (max == arr[i][j]) answer++;
         }
       }
+      return answer;
     }
 
     let arr = [
@@ -25,6 +34,7 @@
       [8, 7, 5, 5, 2]
     ];
     console.log(solution(arr));
+
   </script>
 </body>
 </html>

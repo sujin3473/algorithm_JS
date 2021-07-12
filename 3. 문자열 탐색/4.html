@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>가장 짧은 문자거리</title>
+</head>
+<body>
+  <script>
+    function solution(s, c) {
+      let answer = [];
+      let idx = s.indexOf(c);
+      for(let i=0; i<s.length; i++) {
+        let num1 = Math.abs(idx - i);
+        let num2 = Math.abs(s.indexOf(c, i) - i);
+        if(num1>num2) {
+          num1=num2;
+          idx=s.indexOf(c, i);
+        }
+        answer.push(num1);
+      }
+      return answer;
+    }
+
+    const str = 'teachermode';
+    console.log(solution(str, 'e'));
+  </script>
+</body>
+</html>

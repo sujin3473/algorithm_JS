@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title>회문 문자열</title>
 </head>
 <body>
   <script>
-    function solution(x, y, z) {
-
+    function solution(s) {
+      let answer = "NO";
+      const reverseArr = Array.from(s).reverse().join('');
+      if(reverseArr.toUpperCase() == s.toUpperCase()) answer="YES";
+      return answer;
     }
-    console.log(solution(6,7,11));
+
+    const str = "goooG";
+    console.log(solution(str));
   </script>
 </body>
 </html>
