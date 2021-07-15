@@ -6,7 +6,20 @@
 <body>
   <script>
     function solution(arr) {
+      let answer = 0, max = Number.MIN_SAFE_INTEGER;
+      let maxNums = [];
 
+      for (let i = 0; i<arr.length; i++) {
+        let temp = (arr[i]+'').split('');
+        let sum = temp.reduce((sum, n) => sum + parseInt(n), 0);
+        if (sum >= max) {
+          max = sum;
+          maxNums.push(arr[i]);
+        }
+      }
+
+      answer = Math.max(...maxNums);
+      return answer;
     }
 
     const arr = [128, 460, 603, 40, 521, 137, 123];
