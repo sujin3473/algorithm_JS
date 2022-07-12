@@ -27,14 +27,14 @@
 Big O 공식을 사용하여 <U>_알고리즘이 O(f(n))의 시간 복잡도를 가진다._</U> 라고 표현할 수 있다.
 f(n)은 내가 만든 알고리즘의 시간 효율성(running time)을 의미한다.
 
-- O(1) : 언제나 일정한 시간이 걸리는 알고리즘
+- **O(1)** : 언제나 일정한 시간이 걸리는 알고리즘
   <pre><code>
     function addUpTo(n) {
       return n * (n+1) / 2;
     }
   </pre></code>
 
-- O(n) : 입력 데이터에 비례해서 처리 시간이 늘어나는 알고리즘
+- **O(n)** : 입력 데이터에 비례해서 처리 시간이 늘어나는 알고리즘
   <pre><code>
     function addUpTo(n) {
       let total = 0;
@@ -45,7 +45,7 @@ f(n)은 내가 만든 알고리즘의 시간 효율성(running time)을 의미�
     }
   </pre></code>
 
-- O(n²)
+- **O(n²)**
   <pre><code>
     function f(n) {
       for(let i=1;i<=n; i++) {
@@ -56,7 +56,7 @@ f(n)은 내가 만든 알고리즘의 시간 효율성(running time)을 의미�
     }
   </pre></code>
 
-- O(nm)
+- **O(nm)**
   <pre><code>
   function f(n, m) {
       for(let i=1;i<=n; i++) {
@@ -67,17 +67,28 @@ f(n)은 내가 만든 알고리즘의 시간 효율성(running time)을 의미�
     }
   </pre></code>
 
-- O(2ⁿ)<br/>
+- **O(2ⁿ)**<br/>
   피보나치
   <pre><code>
   function f(n, r) {
-    if(n <= 0) return 0;
-    else if(n === 1) retunr r[n] = 1;
-    return r[n] = f(n - 1, r) + f(n - 2, r);
+    if(n<=1) {
+      return n;
+    }
+    return f(n-1)*f(n-2);
   }
   </pre></code>
 
-- O(log n)<br/>
+- **O(log n)**<br/>
   2진검색(binary search)
   <pre><code>
   </pre></code>
+
+- **O(sqrt(n))**<br/>
+  2진검색(binary search)
+  <pre><code>
+  </pre></code>
+
+- **Big O 규칙**
+  - 상수는 버린다.<br/>
+    O(2n) => O(n)<br/>
+    O(n² + n²) => O(n²)
