@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
-  <title>회문 문자열</title>
+  <title>유효한 팰린드롬</title>
 </head>
 <body>
   <script>
     function solution(s) {
       let answer = "YES";
-      s=s.toLowerCase();
+      s=s.toLowerCase().replace(/[^a-z]/g, '');
+      if(s.split('').reverse().join('') !== s) answer="NO";
       return answer;
     }
-  
-    const str = "goooG";
+
+    const str = 'found7, time: study; Yduts; emit, 7Dnuof';
     console.log(solution(str));
   </script>
 </body>

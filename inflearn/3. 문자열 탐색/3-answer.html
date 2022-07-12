@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>숫자만 추출</title>
+</head>
+<body>
+  <script>
+    function solution(s) {
+      let answer = '';
+      for(let x of str) {
+        if(!isNaN(x)) answer+=x;
+      }
+      return parseInt(answer);
+    }
+
+    const str = 'g0en2T0s8eSoft';
+    console.log(solution(str));
+  </script>
+</body>
+</html>
