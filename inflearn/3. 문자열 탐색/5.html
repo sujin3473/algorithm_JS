@@ -1,28 +1,34 @@
 <!DOCTYPE html>
+
 <head>
   <meta charset="UTF-8">
   <title>문자열 압축</title>
 </head>
+
 <body>
   <script>
     function solution(s) {
       let answer = s[0];
-      let count = 1;
-      for(let i=1; i<s.length; i++) {
-        if(s[i]===s[i-1]) {
-          count++;
-          if(i===(s.length-1)) answer+=count;
+      let p = s[0];
+      let num = 1;
+      for (let i = 1; i < s.length; i++) {
+        if (s[i] === p) {
+          num++;
         } else {
-          if(count>1) answer+=count;
-          count = 1;
-          answer+=s[i];
+          if (num === 1) answer += s[i];
+          else {
+            answer += num;
+            num = 1;
+            if (i === s.length - 1) answer += s[i];
+          }
+          p = s[i];
         }
       }
       return answer;
     }
-
-    const str = "KKHSSSSSSSEE";
+    const str = "KKHSSSSSSSE";
     console.log(solution(str));
   </script>
 </body>
+
 </html>

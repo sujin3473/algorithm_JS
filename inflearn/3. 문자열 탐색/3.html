@@ -6,9 +6,10 @@
 <body>
   <script>
     function solution(s) {
+      const arr = s.split('');
       let answer = '';
-      for(x of s) {
-        if((/[0-9]/).test(x)) answer+=x;
+      for(let a of arr) {
+        if(!isNaN(parseInt(a))) answer+=a;
       }
       return parseInt(answer);
     }

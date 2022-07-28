@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>가장 짧은 문자거리</title>
+</head>
+
+<body>
+  <script>
+    function solution(str, t) {
+      let answer = [];
+      // p가 str.length보다 커야하는 이유
+      // → 맨 첫번째 값은 무조건 오른쪽부터 센 값이 들어와야하고
+      //   맨 마지막 값은 무조건 왼쪽부터 센 값이 들어와야 하기 때문
+      let p = 1000;
+
+      for (let x of str) {
+        if (x === t) {
+          p = 0;
+          answer.push(p);
+        } else {
+          p++;
+          answer.push(p);
+        }
+      }
+      p = 1000;
+      for (let i = str.length - 1; i >= 0; i--) {
+        if (str[i] === t) {
+          p = 0;
+        } else {
+          p++;
+          answer[i] = Math.min(answer[i], p);
+        }
+      }
+
+      return answer;
+    }
+
+    const str = 'teachermode';
+    console.log(solution(str, 'e'));
+  </script>
+</body>
+
+</html>

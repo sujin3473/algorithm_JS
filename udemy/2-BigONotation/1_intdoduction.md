@@ -84,7 +84,7 @@ f(n)은 내가 만든 알고리즘의 시간 효율성(running time)을 의미�
   </pre></code>
 
 - **O(sqrt(n))**<br/>
-  2진검색(binary search)
+
   <pre><code>
   </pre></code>
 
