@@ -1,28 +1,48 @@
 <!DOCTYPE html>
+
 <head>
   <meta charset="UTF-8">
   <title>뒤집은 소수</title>
 </head>
+
 <body>
   <script>
     function solution(arr) {
       let answer = [];
-      let rArr = [];
-      for(let x of arr) {
-        let rNum = (x+'').split('').reverse().join('');
-        for (let i=0; i<rNum; i++) {
 
+      //소수(Prime number) 찾는 방법
+      //소수란? 1과 자기 자신만을 약수로 가지는 수
+
+      //아리스토테네스의 체 사용
+      //N이 소수인지 확인하려면 2부터 √ N 까지 for문을 돌려서 N을 나누었을 때
+      //나머지가 0이면 소수가 아님, 나누어지지 않으면 소수
+      for (let i = 0; i < arr.length; i++) {
+        let reversed = '';
+        const stringified = arr[i].toString().split('');
+        for (let j = stringified.length - 1; j >= 0; j--) {
+          reversed += stringified[j];
         }
-        rArr.push(parseInt(rNum));
+        reversed = Number(reversed);
+        if (reversed === 1) continue;
+        else if (reversed === 2) {
+          answer.push(reversed);
+        } else {
+          let isPrime = true;
+          for (let k = 2; k <= Math.sqrt(reversed); k++) {
+            if (reversed % k === 0) {
+              isPrime = false;
+              break;
+            }
+          }
+          if (isPrime) answer.push(reversed)
+        }
       }
-      for(x of arr) {
-
-      }
-      return arr;
+      return answer;
     }
 
     const arr = [32, 55, 62, 20, 250, 370, 200, 30, 100];
     console.log(solution(arr));
   </script>
 </body>
+
 </html>
